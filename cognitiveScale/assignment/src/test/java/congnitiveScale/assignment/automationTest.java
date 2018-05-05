@@ -15,6 +15,7 @@ public class automationTest {
 
 	@BeforeClass
 	public void preTestSetup() {
+		
 		System.setProperty("webdriver.chrome.driver", "/Users/ankurmarkanda/Documents/Selenium WebDriver/chromedriver");
 		driver = new ChromeDriver();
 		page = new citrusPayPageObject(driver);
