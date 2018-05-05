@@ -15,11 +15,8 @@ public class automationTest {
 
 	@BeforeClass
 	public void preTestSetup() {
-		
-		System.setProperty("webdriver.chrome.driver", "/Users/ankurmarkanda/Documents/Selenium WebDriver/chromedriver");
-		driver = new ChromeDriver();
+		driver = browserUtil.selectBrowserToStart("Chrome",propertiesReader.getValue("url"));
 		page = new citrusPayPageObject(driver);
-		driver.get(propertiesReader.getValue("url"));
 	}
 
 	@Test(priority = 1, alwaysRun = true)
@@ -52,8 +49,7 @@ public class automationTest {
 	@Test(priority = 6)
 	public void fontTest() {
 		Assert.assertEquals("Roboto", page.getElementFontEditProfileLink());
-	}
-	
+	}	
 	@AfterClass
 	public void postTest() {
 		driver.quit();
