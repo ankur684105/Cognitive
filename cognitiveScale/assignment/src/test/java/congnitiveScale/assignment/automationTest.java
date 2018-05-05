@@ -2,7 +2,6 @@ package congnitiveScale.assignment;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -13,9 +12,9 @@ public class automationTest {
 	WebDriver driver;
 	citrusPayPageObject page;
 
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void preTestSetup() {
-		driver = browserUtil.selectBrowserToStart("Chrome",propertiesReader.getValue("url"));
+		driver = browserUtil.selectBrowserToStart("Chrome", propertiesReader.getValue("url"));
 		page = new citrusPayPageObject(driver);
 	}
 
@@ -49,7 +48,8 @@ public class automationTest {
 	@Test(priority = 6)
 	public void fontTest() {
 		Assert.assertEquals("Roboto", page.getElementFontEditProfileLink());
-	}	
+	}
+
 	@AfterClass
 	public void postTest() {
 		driver.quit();
