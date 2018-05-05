@@ -11,11 +11,11 @@ public class browserUtil {
 		String Browser = browser.toLowerCase();
 		if (Browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					"/Users/ankurmarkanda/Documents/Selenium WebDriver/chromedriver");
+					propertiesReader.getValue("chromedriver"));
 			driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
-					"/Users/ankurmarkanda/Documents/Selenium WebDriver/geckodriver");
+					propertiesReader.getValue("firefoxdriver"));
 			driver = new ChromeDriver();
 		} else if (Browser.equals("safari")) {
 			driver = new SafariDriver();

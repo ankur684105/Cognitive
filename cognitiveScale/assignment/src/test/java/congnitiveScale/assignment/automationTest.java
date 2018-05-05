@@ -17,12 +17,12 @@ public class automationTest {
 		driver = browserUtil.selectBrowserToStart("Chrome", propertiesReader.getValue("url"));
 		page = new citrusPayPageObject(driver);
 	}
-
+    //check login test password in mail 
 	@Test(priority = 1, alwaysRun = true)
 	public void loginTest() {
 		page.loginToCitrus("connectankur03@gmail.com", "Ankur@93");
 	}
-
+	
 	@Test(priority = 2)
 	public void validateWithDrawWindowPane() {
 		Assert.assertTrue(page.validateWithdrawPage());
