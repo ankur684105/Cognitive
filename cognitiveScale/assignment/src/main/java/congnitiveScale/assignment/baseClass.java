@@ -14,7 +14,7 @@ public class baseClass {
 		this.driver = driver;
 	}
 
-	public void implicitWait(int time) {
+	public void putImplicitWait(int time) {
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 	}
 
