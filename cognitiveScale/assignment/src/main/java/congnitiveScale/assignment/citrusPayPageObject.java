@@ -1,24 +1,19 @@
 package congnitiveScale.assignment;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 
-public class citrusPayPageObject {
+public class citrusPayPageObject extends baseClass {
 	public WebDriver driver;
 	JavascriptExecutor executor;
+	baseClass base = new baseClass(driver);
 
 	public citrusPayPageObject(WebDriver driver) {
-		super();
+		super(driver);
 		this.driver = driver;
-	}
-
-	public void implicitWait() {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	String loginId = "[id=linkUserUserId]";
@@ -44,7 +39,7 @@ public class citrusPayPageObject {
 	}
 
 	public boolean validateWithdrawPage() throws ElementNotVisibleException {
-		implicitWait();
+
 		executor = (JavascriptExecutor) driver;
 		executor.executeScript("$('[id=btn-withdraw-cash]').click();");
 		return driver.findElement(By.xpath(withdrewCashMsg)).isDisplayed();
@@ -62,19 +57,19 @@ public class citrusPayPageObject {
 	}
 
 	public String getAddMoneyButtonColor() {
-		implicitWait();
+		base.implicitWait(10);
 		return driver.findElement(By.xpath("//*[@id='addBtDiv']")).getCssValue("color");
 
 	}
 
 	public void getWithdrawCashButtonCoordinates() {
-		implicitWait();
+		base.implicitWait(10);
 		Point p = driver.findElement(By.xpath(withdrawCash)).getLocation();
 		System.out.println("X Coordinates are " + p.x + "Y Coordinates are " + p.y);
 	}
 
 	public String getElementFontEditProfileLink() {
-		implicitWait();
+		base.implicitWait(10);
 		return driver.findElement(By.xpath("//*[@class='user-links']/a[1]")).getCssValue("font-family");
 	}
 

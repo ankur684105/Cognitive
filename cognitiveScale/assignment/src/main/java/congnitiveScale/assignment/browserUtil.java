@@ -10,12 +10,10 @@ public class browserUtil {
 	public static WebDriver selectBrowserToStart(String browser, String url) {
 		String Browser = browser.toLowerCase();
 		if (Browser.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					propertiesReader.getValue("chromedriver"));
+			System.setProperty("webdriver.chrome.driver", propertiesReader.getValue("chromedriver"));
 			driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver",
-					propertiesReader.getValue("firefoxdriver"));
+			System.setProperty("webdriver.gecko.driver", propertiesReader.getValue("firefoxdriver"));
 			driver = new ChromeDriver();
 		} else if (Browser.equals("safari")) {
 			driver = new SafariDriver();
