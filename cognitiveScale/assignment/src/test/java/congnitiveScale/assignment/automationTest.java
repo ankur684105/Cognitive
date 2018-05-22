@@ -20,7 +20,7 @@ public class automationTest {
     //check login test password in mail 
 	@Test(priority = 1, alwaysRun = true)
 	public void loginTest() {
-		page.loginToCitrus("connectankur03@gmail.com", "Ankur@93");
+		page.loginToCitrus("id", "pwd");
 	}
 	
 	@Test(priority = 2)
