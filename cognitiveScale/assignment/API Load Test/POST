@@ -1,0 +1,15 @@
+Map<String, Object>  jsonAsMap = new HashMap<>();
+map.put("name", "Test12");
+map.put("title", "Test127123");
+map.put("contactEmail", “abc@gmail.com");
+map.put("description", "testing purpose");
+
+ResponseBody = 
+given().
+        accept(ContentType.JSON).
+        contentType(ContentType.JSON).
+        header("userid", "131987”).
+        body(jsonAsMap).
+when().
+        post("").
+thenReturn().body();
